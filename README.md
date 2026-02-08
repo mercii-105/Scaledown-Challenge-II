@@ -36,7 +36,3 @@ This project focuses on **UI/UX quality** while keeping the chatbot functionalit
 - CSS
 - JavaScript (Vanilla)
 
----
-
-## 📂 Project Structure
-
