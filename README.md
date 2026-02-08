@@ -20,8 +20,6 @@ Nexterra is a lightweight sustainability information system designed to provide 
 - Quick replies + related question suggestions
 - Search bar to find FAQs instantly
 - Typing indicator + clean chat bubbles
-- Confidence score for answers
-- Sources section (static links)
 
 ###  Compressed Knowledge Delivery
 - **Quick Mode:** short, compressed answers
