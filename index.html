@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoFAQ — Environmental FAQ Bot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="light">
+  <div class="shell">
+
+    <!-- TOP NAV -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <h1>Nexterra</h1>
+          <p>Environmental FAQ Bot</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="navBtn active" id="navHome">Home</button>
+        <button class="navBtn" id="navChat">Chatbot</button>
+        <button class="navBtn ghost" id="navAbout">About</button>
+      </nav>
+    </header>
+
+    <!-- HOME PAGE -->
+    <section class="page active" id="homePage">
+
+      <div class="hero">
+        <div class="heroText">
+          <div class="tag">🌎 Sustainability • Recycling • Climate</div>
+          <h2>Welcome to EcoFAQ</h2>
+          <p>
+            A lightweight sustainability information system that gives fast, compressed answers
+            about environmental practices — with a clean UI and smart suggestions.
+          </p>
+
+          <div class="heroBtns">
+            <button class="btn primary" id="startChatBtn">Start Chat →</button>
+            <button class="btn" id="refreshDailyBtn">Refresh Daily Cards</button>
+          </div>
+
+          <div class="miniStats">
+            <div class="stat">
+              <div class="statNum" id="faqCount">—</div>
+              <div class="statLabel">FAQs Available</div>
+            </div>
+            <div class="stat">
+              <div class="statNum" id="catCount">—</div>
+              <div class="statLabel">Categories</div>
+            </div>
+            <div class="stat">
+              <div class="statNum">Quick + Detailed</div>
+              <div class="statLabel">Compressed Answers</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="heroCard">
+          <div class="todayTitle">Today</div>
+          <div class="todayDate" id="todayDate">—</div>
+          <div class="todayHint" id="todayHint">—</div>
+
+          <div class="divider"></div>
+
+          <div class="todayActions">
+            <button class="pillBtn" id="quickAsk1">♻️ Recycling</button>
+            <button class="pillBtn" id="quickAsk2">💧 Water</button>
+            <button class="pillBtn" id="quickAsk3">⚡ Energy</button>
+            <button class="pillBtn" id="quickAsk4">🌡️ Climate</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- DASHBOARD GRID -->
+      <div class="grid">
+
+        <article class="card">
+          <div class="cardHead">
+            <h3>Eco Fact of the Day</h3>
+            <span class="chip">Random</span>
+          </div>
+          <p class="bigText" id="ecoFact">—</p>
+          <p class="muted" id="ecoFactExtra">—</p>
+        </article>
+
+        <article class="card">
+          <div class="cardHead">
+            <h3>On This Day (Eco History)</h3>
+            <span class="chip">Educational</span>
+          </div>
+          <p class="bigText" id="ecoHistory">—</p>
+          <p class="muted" id="ecoHistoryExtra">—</p>
+        </article>
+
+        <article class="card">
+          <div class="cardHead">
+            <h3>Featured Topic</h3>
+            <span class="chip green">Starter</span>
+          </div>
+          <p class="bigText" id="featuredTopicTitle">—</p>
+          <p class="muted" id="featuredTopicText">—</p>
+          <button class="btn small primary" id="featuredTopicBtn">Explore in Chat →</button>
+        </article>
+
+        <article class="card">
+          <div class="cardHead">
+            <h3>Quick Actions</h3>
+            <span class="chip purple">Practical</span>
+          </div>
+
+          <div class="quickActions">
+            <button class="actionBtn" data-q="How do I recycle plastic bottles correctly?">
+              ♻️ Recycle Plastic Bottles
+            </button>
+            <button class="actionBtn" data-q="How do I start composting at home?">
+              🍂 Start Composting
+            </button>
+            <button class="actionBtn" data-q="How can I save water daily?">
+              💧 Save Water
+            </button>
+            <button class="actionBtn" data-q="How can I save electricity at home easily?">
+              ⚡ Save Electricity
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="footerNote">
+        Built with HTML, CSS, and JavaScript • UI/UX-focused • Fast responses • Structured knowledge base
+      </div>
+    </section>
+
+    <!-- ABOUT PAGE -->
+    <section class="page" id="aboutPage">
+      <div class="aboutWrap">
+        <h2>About EcoFAQ</h2>
+        <p>
+          EcoFAQ is a lightweight environmental information assistant designed to deliver
+          compressed sustainability knowledge quickly. It uses structured FAQs with keyword matching,
+          category filtering, and quick suggestions to simulate a helpful chatbot experience.
+        </p>
+
+        <div class="aboutGrid">
+          <div class="card">
+            <h3>Core Features</h3>
+            <ul>
+              <li>FAQ knowledge base with categories + tags</li>
+              <li>Quick & Detailed answer modes (compressed responses)</li>
+              <li>Search + suggestions</li>
+              <li>Related question recommendations</li>
+              <li>Clean modern UI with light theme</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Why this design?</h3>
+            <p class="muted">
+              The interface is inspired by modern dashboards — the goal is to make sustainability
+              information feel accessible, friendly, and easy to explore.
+            </p>
+          </div>
+        </div>
+
+        <button class="btn primary" id="aboutToChatBtn">Go to Chatbot →</button>
+      </div>
+    </section>
+
+    <!-- CHATBOT PAGE -->
+    <section class="page" id="chatPage">
+      <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+          <div class="panel">
+            <label class="label">Search FAQs</label>
+            <div class="searchWrap">
+              <input id="searchInput" type="text" placeholder="Try: plastic, compost, carbon..." />
+              <button id="clearSearchBtn" class="iconBtn" title="Clear search">✕</button>
+            </div>
+            <div id="searchResults" class="searchResults"></div>
+          </div>
+
+          <div class="panel">
+            <div class="rowBetween">
+              <label class="label">Answer Style</label>
+              <div class="toggle">
+                <button id="modeQuick" class="toggleBtn active">Quick</button>
+                <button id="modeDetailed" class="toggleBtn">Detailed</button>
+              </div>
+            </div>
+            <p class="hint">Quick = compressed answers. Detailed = more explanation + tips.</p>
+          </div>
+
+          <div class="panel">
+            <label class="label">Categories</label>
+            <div id="categoryList" class="categoryList"></div>
+          </div>
+
+          <div class="panel">
+            <label class="label">Popular</label>
+            <div id="popularList" class="popularList"></div>
+          </div>
+
+          <div class="panel foot">
+            <button id="clearChatBtn" class="btn secondary">Clear Chat</button>
+            <button id="demoBtn" class="btn primary">Run Demo</button>
+          </div>
+        </aside>
+
+        <!-- CHAT -->
+        <main class="chat">
+          <header class="chatHeader">
+            <div class="chatTitle">
+              <div class="dot"></div>
+              <div>
+                <h2>EcoFAQ Chat</h2>
+                <span id="statusText">Ready</span>
+              </div>
+            </div>
+
+            <div class="chatHeaderRight">
+              <button id="backHomeBtn" class="btn ghost">← Home</button>
+            </div>
+          </header>
+
+          <section class="chatBody" id="chatBody"></section>
+
+          <div class="chipsWrap" id="chipsWrap"></div>
+
+          <footer class="chatInputArea">
+            <div class="inputWrap">
+              <input id="userInput" type="text" placeholder="Ask something about sustainability..." />
+              <button id="sendBtn" class="btn primary send">Send</button>
+            </div>
+            <p class="tiny">
+              Tip: Try “How do I compost at home?” or “What plastics are not recyclable?”
+            </p>
+          </footer>
+        </main>
+
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
