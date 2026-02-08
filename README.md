@@ -3,8 +3,6 @@
 
 Nexterra is a lightweight sustainability information system designed to provide fast, structured answers about environmental topics such as recycling, climate change, energy saving, and water conservation.
 
-This project focuses on **UI/UX quality** while keeping the chatbot functionality simple, efficient, and easy to use.
-
 
 
 ##  Features
